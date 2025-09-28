@@ -1,41 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AutoU Classifier</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>Email Classifier</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 </head>
 <body>
-    <header>
-    <div class="logo">AU</div>
-    <div>
-        <h1>AutoU Classifier</h1>
-        <p>Classificação Inteligente de Emails</p>
+  <div class="container">
+    <h1>Classificador de Emails</h1>
+
+    <label for="fileInput" class="file-label">Carregar arquivo (.txt ou .pdf)</label>
+    <input type="file" id="fileInput" accept=".txt,.pdf">
+
+    <textarea id="emailInput" placeholder="Cole ou carregue o conteúdo do email"></textarea>
+
+    <button id="processBtn">Processar Email</button>
+
+    <div id="result" class="result hidden">
+      <h2>Resultado</h2>
+      <p><strong>Categoria:</strong> <span id="classification"></span></p>
+      <p><strong>Resposta sugerida:</strong> <span id="response"></span></p>
     </div>
-    </header>
+  </div>
 
-    <main>
-    <section class="upload-card">
-        <h2>📤 Upload do Email</h2>
-        <p>Faça upload de um arquivo ou cole o conteúdo do email para classificação</p>
-        
-        <input type="file" id="fileInput" accept=".txt,.pdf">
-        
-        <label for="emailText">Ou cole o conteúdo do email</label>
-        <textarea id="emailText" rows="6" placeholder="Digite ou cole aqui..."></textarea>
-
-        <button id="processBtn">Processar Email</button>
-    </section>
-
-    <section class="result-card" id="resultCard" style="display: none;">
-        <h2>⚠️ Resultado da Classificação</h2>
-        <p>Análise baseada no conteúdo do email fornecido</p>
-        <p><strong>Categoria atribuída:</strong> <span id="category"></span></p>
-        <p><strong>Confiança:</strong> <span id="confidence"></span></p>
-    </section>
-    </main>
-
-    <script src="scripts.js"></script>
+  <script src="scripts.js"></script>
 </body>
 </html>
