@@ -42,7 +42,7 @@ processBtn.addEventListener("click", async () => {
   }
 
   try {
-    const response = await fetch("http://email-classifier-api-kwub.onrender.com/emails/classify", {
+    const response = await fetch("https://email-classifier-api-kwub.onrender.com/emails/classify", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ text }),
